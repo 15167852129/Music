@@ -45,6 +45,7 @@
                 </div>
             </div>
         </transition>
+        <login class="nav-login"/>
     </div>
     
   </div>
@@ -52,15 +53,28 @@
 
 <script>
 import { getHotsearch } from '@/network/navbar'
+
+import Login from '../login/Login.vue'
+
     export default {
+        components:{
+            Login
+        },
         data(){
             return{
                 hotsearch: false,
-                hotsearchArr:[]
+                hotsearchArr:[],
+                login:false,
+                unikey:"",
+                qrimg:"",
+                logonstatus:false,
+                loginid:null,
+                loginname:"未登录",
+                loginimg:null
             }
         },
         created(){
-           this.getHotsearch()
+           this.getHotsearch();
         },
         methods:{
             backCilck(){
@@ -236,5 +250,12 @@ import { getHotsearch } from '@/network/navbar'
     width: 300px;
     font-size: 9px;
     color: #999999;
+}
+
+.nav-login{
+  position: absolute;
+  height: 28px;
+  right: 330px;
+  line-height: 28px;
 }
 </style>

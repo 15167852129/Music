@@ -19,7 +19,21 @@
     border-right: 1px solid #e0e0e0;
     padding-top: 13px;
     padding-left: 10px;
+    overflow-y:hidden;
+    white-space: nowrap
   }
 
+  .sidebar:hover{
+    overflow-y:scroll;
+  }
+
+    .sidebar::-webkit-scrollbar{
+      width: 8px;
+      height: 1px;
+  }
+  .sidebar::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #e0e0e0;
+  }
 
 </style>

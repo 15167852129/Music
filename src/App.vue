@@ -13,7 +13,7 @@
         <el-main style="margin: 0px 0px; padding: 0px 0px;">
 
           <keep-alive exclude="PlayList,PlayListSongs">
-            <router-view/>
+            <router-view v-if="isRouterAlive"/>
           </keep-alive>
 
         </el-main>
@@ -35,26 +35,40 @@ import player from './components/common/player/Player.vue';
 
 export default {
   name: 'App',
+  data(){
+    return{
+      isRouterAlive:true
+    }
+  },
   components: {
     NavBar,
     MainSidenar,
     player
   },
-  created(){
-    
+  provide(){
+    return{
+      reload:this.reload
+    }
   },
-  methods:{}
+  methods:{
+    reload(){
+      this.isRouterAlive = false;
+      this.$nextTick(function () {
+        this.isRouterAlive = true;
+      });
+    }
+  } 
 }
 </script>
 
 <style>
 @import url(./assets/css/base.css);
 .el-footer{
-  background-color: aqua;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index:99;
+  border-top:1px solid #e0e0e0;
 }
 </style>

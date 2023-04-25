@@ -1,12 +1,12 @@
 import { request } from './request'
 
 //获取相关歌单
-export function getplaylist(id){
+export function getplaylist(id,cookie){
   return request({
     url:'/playlist/detail',
     methods: "GET",
     params:{
-        id
+        id,cookie
     }
   })
 }

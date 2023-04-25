@@ -55,7 +55,6 @@
         this.playimg = true
       },
       imtemCilck(){
-        // this.$router.push('/playlist?id=' + this.playItem.id)
         this.$router.push('/playlist/' + this.playItem.id)
       }
     }

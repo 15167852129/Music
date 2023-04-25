@@ -69,9 +69,9 @@
       init(){
         //歌单id
         this.id = this.$route.params.id
-        
+        this.cookie = sessionStorage.getItem('cookie')
         //歌单的详细信息
-        getplaylist(this.id).then(res =>{
+        getplaylist(this.id,this.cookie).then(res =>{
           this.data = res.playlist
           //所有歌曲id
           this.trackids = this.data.trackIds
@@ -89,6 +89,7 @@
               //请求歌曲详细信息的网络请求
               getsongdetail(item).then(res=>{
                 resolve(res)
+                // resolve('成功了')
               })
             })
           })
@@ -97,6 +98,7 @@
             for(let song of res){
               this.$store.commit('pushallsong',song)
             }
+            console.log(res);
           })
         })
       }

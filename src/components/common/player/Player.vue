@@ -1,12 +1,27 @@
 <template>
   <div class="player">
-    播放器
+    <div  v-for="(item, index) in allsong">
+      <!-- {{ item }} -->
+    </div>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   export default {
-    
+    data(){
+      return{
+        songs:{}
+      }
+    },
+    computed:{
+      ...mapGetters(['song']),
+      allsong(){
+        return this.song.filter(item =>{
+          return item
+        })
+      }
+    }
   }
 </script>
 

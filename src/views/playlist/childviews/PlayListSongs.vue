@@ -1,11 +1,11 @@
 <template>
   <div class="play-list-songs">
     <div class="songs-nav">
-        <span class="title">标题</span>
-        <span class="singer">歌手</span>
-        <span class="album">专辑</span>
-        <span class="time">时间</span>
-      </div>
+      <span class="title">标题</span>
+      <span class="singer">歌手</span>
+      <span class="album">专辑</span>
+      <span class="time">时间</span>
+    </div>
     <div v-for="(item, index) in allsong" 
       @dblclick="addsongtoplay(item)">
       <ul>
@@ -80,6 +80,7 @@
 </script>
 
 <style scoped>
+
 .songs-nav{
   width: 100%;
   height: 35px;
@@ -131,7 +132,7 @@
 .list-songs .songs-name{
   color: black;
   display: inline-block;
-  /* font-family: 宋体; */
+  font-family: 微软雅黑;;
   width: 625px;
 
   position: absolute;
@@ -145,17 +146,23 @@
 
   position: absolute;
   left: 683px;
+
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .list-songs .songs-album{
   color: black;
   display: inline-block;
-  width: 607px;
-
+  /* width: 607px; */
+  width: 407px;
   position: absolute;
   left: 1005px;
+
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .list-songs .Time{
   color: black;
@@ -186,7 +193,7 @@
 }
 
 .SQ{
-  font-family: 方正舒体;
+  font-family: 微软雅黑;
   color: #da4f49; 
   border: 1px solid #da4f49;
   width: 22px;

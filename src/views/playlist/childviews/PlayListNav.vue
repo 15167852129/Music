@@ -112,11 +112,13 @@
   text-align: center;
   color: #da4f49;
   font-size: 12px;
+  margin-right: 5px;
 }
 
 .play-name{
   font-size: 21px;
-  font-family: 黑体;
+  font-weight: 700;
+  font-family: 微软雅黑;
 }
 
 .avatar{
